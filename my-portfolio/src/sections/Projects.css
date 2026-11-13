@@ -1,0 +1,367 @@
+/* ========================================
+   PROJECTS SECTION
+======================================== */
+
+.projects-section {
+  position: relative;
+  width: 100%;
+  height: 115vh;
+  min-height: 900px;
+  overflow: hidden;
+  background: #111111;
+  color: #eeeae3;
+}
+
+.projects-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 65px 5% 45px;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   HEADING
+======================================== */
+
+.projects-heading {
+  position: relative;
+  z-index: 5;
+}
+
+.projects-eyebrow {
+  display: block;
+  margin-bottom: 15px;
+  color: #858585;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.projects-heading h2 {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: clamp(48px, 8vw, 110px);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+}
+
+.projects-heading h2 span {
+  color: #e84b3c;
+}
+
+.projects-heading p {
+  margin-top: 20px;
+  color: #777;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+/* ========================================
+   3D CAROUSEL STAGE
+======================================== */
+
+.projects-stage {
+  position: absolute;
+  top: 34%;
+  left: 0;
+  width: 100%;
+  height: 52%;
+
+  perspective: 1400px;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+
+  touch-action: pan-y;
+}
+
+/* ========================================
+   PROJECT CARD
+======================================== */
+
+.project-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+
+  width: min(46vw, 760px);
+
+  transform-style: preserve-3d;
+  transform-origin: center center;
+
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/* ========================================
+   PROJECT IMAGE
+======================================== */
+
+.project-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+
+  background: #222;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-sizing: border-box;
+}
+
+.project-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  user-select: none;
+  pointer-events: none;
+  will-change: filter;
+}
+
+.project-image-number {
+  position: absolute;
+  top: 16px;
+  left: 18px;
+
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+/* ========================================
+   PROJECT INFORMATION
+======================================== */
+
+.project-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  padding-top: 14px;
+  padding-bottom: 12px;
+}
+
+.project-label {
+  display: block;
+  margin-bottom: 7px;
+
+  color: #777;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.project-info h3 {
+  margin: 0;
+
+  color: #eeeae3;
+  font-size: clamp(24px, 2.3vw, 32px);
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+
+.project-info p {
+  margin-top: 7px;
+  margin-bottom: 0;
+
+  color: #888;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.project-arrow {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  border: 1px solid #555;
+  border-radius: 50%;
+
+  color: #eeeae3;
+  font-size: 20px;
+}
+
+/* ========================================
+   NAVIGATION CONTROLS
+======================================== */
+
+.projects-controls {
+  position: absolute;
+  z-index: 10;
+  right: 5%;
+  bottom: 85px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.project-nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid #555;
+  border-radius: 50%;
+
+  background: transparent;
+  color: #eeeae3;
+
+  font-size: 20px;
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.project-nav-button:hover {
+  background: #e84b3c;
+  border-color: #e84b3c;
+  color: #fff;
+}
+
+.projects-counter {
+  color: #aaa;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.projects-footer {
+  position: absolute;
+  right: 5%;
+  bottom: 28px;
+  left: 5%;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: #777;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+  .projects-section {
+    height: 110vh;
+    min-height: 950px;
+  }
+
+  .projects-container {
+    padding-top: 65px;
+  }
+
+  .projects-stage {
+    top: 36%;
+    height: 49%;
+  }
+
+  .project-card {
+    width: min(66vw, 680px);
+  }
+
+  .projects-controls {
+    bottom: 85px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .projects-section {
+    height: 1050px;
+    min-height: 1050px;
+  }
+
+  .projects-container {
+    padding: 75px 5% 25px;
+  }
+
+  .projects-heading h2 {
+    font-size: 12vw;
+  }
+
+  .projects-heading p {
+    margin-top: 14px;
+    font-size: 8px;
+  }
+
+  .projects-stage {
+    top: 35%;
+    height: 49%;
+  }
+
+  .project-card {
+    width: 84vw;
+  }
+
+  .project-info {
+    padding-top: 13px;
+    padding-bottom: 10px;
+    gap: 10px;
+  }
+
+  .project-label {
+    font-size: 8px;
+  }
+
+  .project-info h3 {
+    font-size: 25px;
+  }
+
+  .project-info p {
+    max-width: 280px;
+    font-size: 10px;
+  }
+
+  .project-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 17px;
+  }
+
+  .projects-controls {
+    right: 5%;
+    bottom: 75px;
+    gap: 10px;
+  }
+
+  .project-nav-button {
+    width: 36px;
+    height: 36px;
+    font-size: 17px;
+  }
+
+  .projects-footer {
+    bottom: 22px;
+    font-size: 8px;
+  }
+}
